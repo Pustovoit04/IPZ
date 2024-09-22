@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+// Function to print Fibonacci sequence up to the nth term
+void printFibonacci(int n) {
+    if (n < 0) {
+        cout << "The number must be non-negative." << endl;
+        return;
+    }
+
+    if (n == 0) {
+        cout << "No Fibonacci numbers to display." << endl;
+        return;
+    }
+
+    int a = 0, b = 1, c;
+
+    cout << "Fibonacci sequence up to position " << n << ":" << endl;
+
+    // Print the first Fibonacci number
+    if (n >= 1) cout << a << " ";
+
+    // Print the remaining Fibonacci numbers
+    for (int i = 1; i < n; ++i) {
+        cout << b << " ";
+        c = a + b;
+        a = b;
+        b = c;
+    }
+
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number n: ";
+    cin >> n;
+
+    printFibonacci(n);
+
+    return 0;
+}
